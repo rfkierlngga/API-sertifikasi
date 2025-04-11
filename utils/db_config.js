@@ -1,15 +1,15 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
-
-dotenv.config(); // Memastikan variabel environment bisa dibaca
+dotenv.config();
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME,     // nama database
-  process.env.DB_USER,     // user database
-  process.env.DB_PASS,     // password user
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASS,
   {
-    host: process.env.DB_HOST, // host database
+    host: process.env.DB_HOST,
     dialect: "mysql",
+    logging: false, // nonaktifkan log SQL saat production
   }
 );
 
